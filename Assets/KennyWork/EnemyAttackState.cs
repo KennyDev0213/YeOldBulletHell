@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyState {
     
+    float attackCooldown;
+
     public EnemyAttackState(EnemyController controller)
     {
         enemyController = controller;
@@ -9,7 +11,7 @@ public class EnemyAttackState : EnemyState {
 
     public override void OnStateEnter()
     {
-        
+        attackCooldown = 0;
     }
 
     public override void OnStateExit()
@@ -24,5 +26,14 @@ public class EnemyAttackState : EnemyState {
         {
             enemyController.ChangeState(new EnemyWanderState(enemyController));
         }
+        else if (attackCooldown <= 0)
+        {
+            enemyController.weapon.Use();
+            attackCooldown = 1 / enemyController.attackRate;
+        }
+        else {
+            attackCooldown -= Time.deltaTime;
+        }
+        
     }
 }

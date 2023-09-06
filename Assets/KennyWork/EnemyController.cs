@@ -12,7 +12,9 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent nav;
     public EnemyState currentState;
     public Transform playerTransform;
-    public float attackRange = 1f;
+    public float attackRange = 1f, attackRate = 1f;
+
+    public Weapon weapon;
 
     void Start()
     {
@@ -26,6 +28,11 @@ public class EnemyController : MonoBehaviour
         currentState.OnStateExit();
         currentState = state;
         currentState.OnStateEnter();
+    }
+
+    public void OnDeath()
+    {
+        ChangeState(new EnemyDeadState(this));
     }
 
     void Update()
