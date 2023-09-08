@@ -241,7 +241,7 @@ MonoBehaviour:
   damage: 1
   bulletEffect: {fileID: 4910728248453182880, guid: 0bcb444c075a7bc4299708451283d95c,
     type: 3}
-  range: 10
+  range: 50
   gunPoint: {fileID: 103395250575215128}
 --- !u!95 &5579239845401603271
 Animator:
@@ -253,7 +253,7 @@ Animator:
   m_GameObject: {fileID: 4140961774697335774}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 71a32d62fc12807459d083fedd1e5dcb, type: 2}
+  m_Controller: {fileID: 9100000, guid: f329a7434ff8d824fbbefacce0aec778, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -23,9 +23,12 @@ public class GunWeapon : Weapon {
             if (targetHealth != null)
             {
                 targetHealth.AddHealth(-damage);
+                Debug.Log($"delt {damage} to {hit.transform.name}, it's current health is {targetHealth.health}");
+            }
+            else
+            {
+                Debug.Log($"could not find Heath script on {hit.transform.name}");
             }
         }
-
-        Debug.Log($"{gameObject.name} is attacking");
     }
 }

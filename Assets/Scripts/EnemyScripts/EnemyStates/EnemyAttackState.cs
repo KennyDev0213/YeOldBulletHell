@@ -22,7 +22,7 @@ public class EnemyAttackState : EnemyState {
     public override void OnStateUpdate()
     {
         //if the player leaves the attack range then start following the player again
-        if(Vector3.Distance(enemyController.transform.position, enemyController.playerTransform.position) > enemyController.attackRange)
+        if(Vector3.Distance(enemyController.transform.position, enemyController.targetTransform.position) > enemyController.attackRange)
         {
             enemyController.ChangeState(new EnemyWanderState(enemyController));
         }

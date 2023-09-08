@@ -9,17 +9,28 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyController : MonoBehaviour
 {
-    public NavMeshAgent nav;
+    [HideInInspector] public NavMeshAgent nav;
     public EnemyState currentState;
-    public Transform playerTransform;
+    public Transform targetTransform;
     public float attackRange = 1f, attackRate = 1f;
 
     public Weapon weapon;
 
+    [HideInInspector] public Animator enemyAnimator;
+
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        currentState = new EnemyAttackState(this);    
+        enemyAnimator = GetComponent<Animator>();
+
+        if(targetTransform == null)
+        {
+            currentState = new EnemyIdleState(this);
+            Debug.LogWarning($"{name} has no target transform set, make sure it is assigned in the inspector");
+        }
+        else {
+            currentState = new EnemyWanderState(this);
+        }
     }
 
     //implementation of the state machine
@@ -30,6 +41,7 @@ public class EnemyController : MonoBehaviour
         currentState.OnStateEnter();
     }
 
+    //on death used in the Health script attached to this gameObject as the onDeath event
     public void OnDeath()
     {
         ChangeState(new EnemyDeadState(this));

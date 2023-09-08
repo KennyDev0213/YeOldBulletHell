@@ -9,18 +9,18 @@ public class EnemyWanderState : EnemyState {
 
     public override void OnStateEnter()
     {
-        
+        enemyController.enemyAnimator.SetBool("isWalking", true);
     }
 
     public override void OnStateExit()
     {
-        
+        enemyController.enemyAnimator.SetBool("isWalking", false);
     }
 
     public override void OnStateUpdate()
     {
         //if the enemy is close enough to the player then change into an attack state
-        if(Vector3.Distance(enemyController.transform.position, enemyController.playerTransform.position) < enemyController.attackRange)
+        if(Vector3.Distance(enemyController.transform.position, enemyController.targetTransform.position) < enemyController.attackRange)
         {
             enemyController.ChangeState(new EnemyAttackState(enemyController));
         }
@@ -28,7 +28,7 @@ public class EnemyWanderState : EnemyState {
         //otherwise move towards the player
         else if(enemyController.nav.isOnNavMesh)
         {
-            enemyController.nav.SetDestination(enemyController.playerTransform.position);
+            enemyController.nav.SetDestination(enemyController.targetTransform.position);
         }
     }
 }
