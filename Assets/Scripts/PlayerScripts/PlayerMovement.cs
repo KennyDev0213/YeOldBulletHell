@@ -5,13 +5,14 @@ using UnityEngine;
 using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
+    PlayerInput playerInput;
+
     public float movementSpeed = 5.0f;
     public float mouseSensitivity = 2.0f;
-
     private float verticalRotation = 0;
-
     private CharacterController characterController;
 
     void Start()
@@ -19,21 +20,25 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (playerInput == null){
+            playerInput = PlayerInput.GetInstance();
+        }
     }
 
     void Update()
     {
         // Camera rotation
-        float horizontalRotation = Input.GetAxis("Mouse X") * mouseSensitivity;
-        verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+        float horizontalRotation = playerInput.mouseX * mouseSensitivity;
+        verticalRotation -= playerInput.mouseY * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -90, 90);
 
         transform.Rotate(0, horizontalRotation, 0);
         Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 
         // Player movement
-        float moveForward = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
-        float moveSideways = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
+        float moveForward = playerInput.vertical * movementSpeed * Time.deltaTime;
+        float moveSideways = playerInput.horizontal * movementSpeed * Time.deltaTime;
 
         Vector3 movement = transform.forward * moveForward + transform.right * moveSideways;
 

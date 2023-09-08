@@ -6,12 +6,11 @@ public class MeleeWeapon : Weapon {
 
     public float range = 1f;
 
-    private void Start() {
-        
+    public override void Start() {
+        base.Start();
     }
     
     public override void Use() {
-        //TODO add melee functionality
         RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, range, transform.forward);
         foreach (RaycastHit hit in raycastHits) {
 
@@ -23,6 +22,6 @@ public class MeleeWeapon : Weapon {
             }
         }
 
-        Debug.Log($"{gameObject.name} is attacking");
+        //Debug.Log($"{gameObject.name} is attacking");
     }
 }
