@@ -4,16 +4,19 @@ using UnityEngine;
 
 public abstract class PlayerItem : MonoBehaviour
 {
-    public string itemName { get; protected set; }
-    public Sprite itemIcon { get; protected set; }
-
-    // Constructor to initialize item properties.
-    public PlayerItem(string name, Sprite icon)
+   public virtual void OnPickup()
     {
-        itemName = name;
-        itemIcon = icon;
+        //What the items does on PickUp
     }
 
-    // Abstract method to describe the item (to be implemented by derived classes).
-    public abstract string GetItemDescription();
+    public virtual void ItemActivation()
+    {
+        //What the item does/ effects it could have on use
+    }
+
+    public virtual void ItemDestory()
+    {
+        //Destorys the Item
+    }
+
 }
