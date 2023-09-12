@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MeleeWeapon : Weapon {
 
-    GameObject owner;
+    [SerializeField] GameObject owner;
 
     public float range = 1f;
 
@@ -11,17 +11,21 @@ public class MeleeWeapon : Weapon {
     }
     
     public override void Use() {
+
+        weaponAudio?.Play();
+
         RaycastHit[] raycastHits = Physics.SphereCastAll(transform.position, range, transform.forward);
         foreach (RaycastHit hit in raycastHits) {
 
-            Health targetHealth = hit.transform.GetComponent<Health>();
+            if (hit.transform.gameObject == owner) continue; //prevents the user from damaging itself
 
+            //if the object has a health script attached then deduct health from it
+            Health targetHealth = hit.transform.GetComponent<Health>();
             if(targetHealth != null) 
             {
                 targetHealth.AddHealth(-damage);
+                Debug.Log($"{name} hit {hit.transform.name} with melee for {damage} damage");
             }
         }
-
-        //Debug.Log($"{gameObject.name} is attacking");
     }
 }

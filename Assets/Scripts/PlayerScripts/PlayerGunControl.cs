@@ -25,8 +25,6 @@ public class PlayerGunControl : MonoBehaviour
         if(playerInput.m1){
             if(attackCooldown > 0) return;
 
-            Debug.Log("Player Shot!");
-
             currentWeapon.Use();
 
             attackCooldown = 1 / attackRate;

@@ -12,6 +12,7 @@ public class EnemyAttackState : EnemyState {
     public override void OnStateEnter()
     {
         attackCooldown = 0;
+        enemyController.nav.isStopped = true;
     }
 
     public override void OnStateExit()
@@ -21,6 +22,8 @@ public class EnemyAttackState : EnemyState {
 
     public override void OnStateUpdate()
     {
+        enemyController.transform.LookAt(enemyController.targetTransform.position);
+
         //if the player leaves the attack range then start following the player again
         if(Vector3.Distance(enemyController.transform.position, enemyController.targetTransform.position) > enemyController.attackRange)
         {

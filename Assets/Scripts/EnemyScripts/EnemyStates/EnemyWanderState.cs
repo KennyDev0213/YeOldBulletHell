@@ -20,7 +20,7 @@ public class EnemyWanderState : EnemyState {
     public override void OnStateUpdate()
     {
         //if the enemy is close enough to the player then change into an attack state
-        if(Vector3.Distance(enemyController.transform.position, enemyController.targetTransform.position) < enemyController.attackRange)
+        if(Vector3.Distance(enemyController.transform.position, enemyController.targetTransform.position) <= enemyController.attackRange)
         {
             enemyController.ChangeState(new EnemyAttackState(enemyController));
         }
