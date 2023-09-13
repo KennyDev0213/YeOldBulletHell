@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 247813502}
   - component: {fileID: 247813501}
   - component: {fileID: 247813506}
+  - component: {fileID: 247813507}
   m_Layer: 0
   m_Name: TestingItem
   m_TagString: Untagged
@@ -163,6 +164,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PlayerItemManager, Assembly-CSharp
         m_MethodName: AddItem
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ball
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 247813507}
+        m_TargetAssemblyTypeName: PowerUpItem, Assembly-CSharp
+        m_MethodName: OnPickup
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -284,6 +297,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &247813507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247813500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25793fbd786f6d44841af1a9c7b1c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1020645130
 GameObject:
   m_ObjectHideFlags: 0
