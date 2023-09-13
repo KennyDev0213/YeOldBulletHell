@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Windows;
-using Input = UnityEngine.Input;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
+    AttributeManager attributeManager;
     PlayerInput playerInput;
 
     public float movementSpeed = 5.0f;
+    public float playerSpeedMultiplier = 1;
     public float mouseSensitivity = 2.0f;
     private float verticalRotation = 0;
     private CharacterController characterController;
@@ -24,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
         if (playerInput == null){
             playerInput = PlayerInput.GetInstance();
         }
+
+        attributeManager = AttributeManager.instance;
+        UpdateAttributes();
     }
 
     void Update()
@@ -37,13 +37,25 @@ public class PlayerMovement : MonoBehaviour
         Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 
         // Player movement
-        float moveForward = playerInput.vertical * movementSpeed * Time.deltaTime;
-        float moveSideways = playerInput.horizontal * movementSpeed * Time.deltaTime;
+        float moveForward = playerInput.vertical * movementSpeed * playerSpeedMultiplier * Time.deltaTime;
+        float moveSideways = playerInput.horizontal * movementSpeed * playerSpeedMultiplier * Time.deltaTime;
 
         Vector3 movement = transform.forward * moveForward + transform.right * moveSideways;
 
         characterController.Move(movement);
     }
+
+    void FixedUpdate()
+    {
+        UpdateAttributes();
+    }
+
+    //updates the attribute if the attribute changes
+    void UpdateAttributes()
+    {
+        playerSpeedMultiplier = attributeManager.GetAttribute("player_movespeed_multiplier");
+    }
+
 
     // if you want to constrain the player within a specific area, you can do this:
     // transform.position = new Vector3(

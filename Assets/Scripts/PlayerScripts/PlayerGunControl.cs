@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerGunControl : MonoBehaviour
 {
-    public float attackRate = 1f;
+    AttributeManager attributeManager;
+    public float attackRate = 1f, attackRateMultiplier = 1f;
     private float attackCooldown = 0f;
     PlayerInput playerInput;
 
@@ -14,7 +15,11 @@ public class PlayerGunControl : MonoBehaviour
     {
         if(playerInput == null){
             playerInput = PlayerInput.GetInstance();
-        }        
+        }
+
+        attributeManager  = AttributeManager.instance;
+
+        UpdateAttributes();
     }
 
     void Update()
@@ -27,7 +32,16 @@ public class PlayerGunControl : MonoBehaviour
 
             currentWeapon.Use();
 
-            attackCooldown = 1 / attackRate;
+            attackCooldown = 1 / (attackRate * attackRateMultiplier);
         }
+    }
+
+    private void FixedUpdate() {
+        UpdateAttributes();
+    }
+
+    void UpdateAttributes()
+    {
+        attackRateMultiplier = attributeManager.GetAttribute("player_attackspeed_multiplier");
     }
 }

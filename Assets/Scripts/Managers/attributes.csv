@@ -1,0 +1,6 @@
+attribute_name, value
+player_damage_multiplier, 1
+player_attackspeed_multiplier, 1
+player_movespeed_multiplier, 1
+player_maxhealth_multiplier, 1
+player_healthregen_multiplier, 1
