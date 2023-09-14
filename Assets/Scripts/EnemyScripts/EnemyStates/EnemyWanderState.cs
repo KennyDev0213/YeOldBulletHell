@@ -9,12 +9,13 @@ public class EnemyWanderState : EnemyState {
 
     public override void OnStateEnter()
     {
-        enemyController.enemyAnimator.SetBool("isWalking", true);
+        Debug.Log($"{enemyController.name} is now wondering");
+        //enemyController.enemyAnimator.SetBool("isWalking", true);
     }
 
     public override void OnStateExit()
     {
-        enemyController.enemyAnimator.SetBool("isWalking", false);
+        //enemyController.enemyAnimator.SetBool("isWalking", false);
     }
 
     public override void OnStateUpdate()
@@ -29,6 +30,11 @@ public class EnemyWanderState : EnemyState {
         else if(enemyController.nav.isOnNavMesh)
         {
             enemyController.nav.SetDestination(enemyController.targetTransform.position);
+        }
+
+        else
+        {
+            enemyController.ChangeState(new EnemyIdleState(enemyController));
         }
     }
 }

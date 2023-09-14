@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     public int health { get; private set; }
     [SerializeField] int maxHealth = 100;
-    [SerializeField] UnityEvent onDeath;
+    [SerializeField] public UnityEvent onDeath;
     
     void Start()
     {

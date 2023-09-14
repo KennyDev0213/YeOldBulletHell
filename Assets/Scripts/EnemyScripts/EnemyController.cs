@@ -16,12 +16,12 @@ public class EnemyController : MonoBehaviour
 
     public Weapon weapon;
 
-    [HideInInspector] public Animator enemyAnimator;
+    //[HideInInspector] public Animator enemyAnimator;
 
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        enemyAnimator = GetComponent<Animator>();
+        //enemyAnimator = GetComponent<Animator>();
 
         if(targetTransform == null)
         {
@@ -31,6 +31,8 @@ public class EnemyController : MonoBehaviour
         else {
             currentState = new EnemyWanderState(this);
         }
+
+        currentState.OnStateEnter();
     }
 
     //implementation of the state machine

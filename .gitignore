@@ -70,3 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/KenneyAssets/Medieval Town (base)/Materials/Wood.mat.meta
+Assets/KenneyAssets/Medieval Town (base)/Materials/White.mat.meta
+Assets/KenneyAssets/Medieval Town (base)/Materials/Red_Roof.mat.meta
+Assets/KenneyAssets/Medieval Town (base)/Materials/Red_Cotton.mat.meta
+Assets/KenneyAssets/Medieval Town (base)/Materials/Light_Stone.mat.meta
+Assets/KenneyAssets/Medieval Town (base)/Materials/Green_Roof.mat.meta
+Assets/KenneyAssets/Medieval Town (base)/Materials/FrontColor.mat.meta
+Assets/KenneyAssets/Medieval Town (base)/Materials/Dark_Stone.mat.meta

@@ -17,7 +17,7 @@ public class EnemyAttackState : EnemyState {
 
     public override void OnStateExit()
     {
-        
+        enemyController.nav.isStopped = false;
     }
 
     public override void OnStateUpdate()

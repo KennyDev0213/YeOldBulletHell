@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerGunControl : MonoBehaviour
 {
     AttributeManager attributeManager;
-    public float attackRate = 1f, attackRateMultiplier = 1f;
-    private float attackCooldown = 0f;
+    public float attackRate = 1f;
+    private float attackCooldown = 0f, attackRateMultiplier = 1f;
     PlayerInput playerInput;
 
     [SerializeField] private Weapon currentWeapon;

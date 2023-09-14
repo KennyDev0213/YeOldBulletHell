@@ -55,11 +55,13 @@ public class AttributeManager : MonoBehaviour
             attributes.Add(values[0], fvalue);
         }
 
+        /*
         Debug.Log("Initialized attributes as:");
         foreach(KeyValuePair<string, float> pair in attributes)
         {
             Debug.Log($"{pair.Key} : {pair.Value}");
         }
+        */
     }
 
     public float GetAttribute(string attributeName){
