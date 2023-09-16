@@ -13,13 +13,13 @@ public class EnemyDeadState : EnemyState {
         // - add onDeath animation
         // - add body lifetime before Destroying the object (for performance)
 
-        //enemyController.enemyAnimator.SetBool("isDead", true);
+        enemyController.enemyAnimator.SetBool("isDead", true);
         enemyController.nav.enabled = false;
     }
 
     public override void OnStateExit()
     {
-        //enemyController.enemyAnimator.SetBool("isDead", false);
+        enemyController.enemyAnimator.SetBool("isDead", false);
     }
 
     public override void OnStateUpdate()

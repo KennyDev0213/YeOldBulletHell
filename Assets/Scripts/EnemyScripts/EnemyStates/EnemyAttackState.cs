@@ -31,7 +31,8 @@ public class EnemyAttackState : EnemyState {
         }
         else if (attackCooldown <= 0)
         {
-            enemyController.weapon.Use();
+            enemyController.weapon.Use(); // TODO make attacks determined by the animation
+            enemyController.enemyAnimator.SetTrigger("Attack");
             attackCooldown = 1 / enemyController.attackRate;
         }
         else {

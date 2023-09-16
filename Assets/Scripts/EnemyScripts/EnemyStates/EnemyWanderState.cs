@@ -10,12 +10,12 @@ public class EnemyWanderState : EnemyState {
     public override void OnStateEnter()
     {
         Debug.Log($"{enemyController.name} is now wondering");
-        //enemyController.enemyAnimator.SetBool("isWalking", true);
+        enemyController.enemyAnimator.SetBool("isWalking", true);
     }
 
     public override void OnStateExit()
     {
-        //enemyController.enemyAnimator.SetBool("isWalking", false);
+        enemyController.enemyAnimator.SetBool("isWalking", false);
     }
 
     public override void OnStateUpdate()

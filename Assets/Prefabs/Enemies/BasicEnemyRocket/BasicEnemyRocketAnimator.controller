@@ -104,7 +104,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.75
   m_HasExitTime: 0
@@ -196,7 +196,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BasicEnemyAnimator
+  m_Name: BasicEnemyRocketAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isWalking
@@ -252,7 +252,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 23b2e398b6ee15d468ffcd0c1b44ad3b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7afb3c8003b1b6140b84a38f06ab622b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -338,7 +338,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8b0f9048622e71344aa6d9fd411d02ef, type: 2}
+  m_Motion: {fileID: 7400000, guid: 72de91cc8a7071b4a9cb6b1069c3c038, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

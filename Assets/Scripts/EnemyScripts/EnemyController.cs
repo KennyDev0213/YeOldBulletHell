@@ -16,12 +16,12 @@ public class EnemyController : MonoBehaviour
 
     public Weapon weapon;
 
-    //[HideInInspector] public Animator enemyAnimator;
+    [HideInInspector] public Animator enemyAnimator;
 
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        //enemyAnimator = GetComponent<Animator>();
+        enemyAnimator = GetComponent<Animator>();
 
         if(targetTransform == null)
         {
@@ -47,6 +47,12 @@ public class EnemyController : MonoBehaviour
     public void OnDeath()
     {
         ChangeState(new EnemyDeadState(this));
+    }
+
+    //used for animation events
+    public void UseWeapon()
+    {
+        weapon.Use();
     }
 
     void Update()
