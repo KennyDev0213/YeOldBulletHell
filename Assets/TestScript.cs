@@ -8,6 +8,7 @@ public class TestScript : MonoBehaviour
 
     private void Start() {
         attributeManager = AttributeManager.instance;
+        Time.timeScale = 0.5f;
     }
 
     public void IncreaseSpeed(float value)

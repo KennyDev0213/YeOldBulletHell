@@ -22,9 +22,11 @@ public class ProjectileWeapon : Weapon {
         
         weaponAudio?.Play();
 
-        GameObject tempProjectile = Instantiate(projectile, gunPoint.position, transform.rotation);
-        Vector3 dir = Vector3.Normalize(transform.rotation.eulerAngles);
-        dir += transform.forward * projectileSpeed;
+        GameObject tempProjectile = Instantiate(projectile, gunPoint.position, gunPoint.rotation);
+        Vector3 dir = Vector3.Normalize(gunPoint.rotation.eulerAngles);
+        dir += gunPoint.forward * projectileSpeed;
         tempProjectile.GetComponent<Projectile>().ChangeVelocity(dir, projectileSpeed);
+
+        //ROCKET LAUNCHER is not accurate when firing, need fix
     }
 }

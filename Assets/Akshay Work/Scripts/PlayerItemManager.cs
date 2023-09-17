@@ -5,6 +5,19 @@ using UnityEngine.Events;
 
 public class PlayerItemManager : MonoBehaviour
 {
+    public static PlayerItemManager instance;
+
+    private void Awake() {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
     private List<string> playerInventory = new List<string>();
     private void DisplayPlayerItems()
     {

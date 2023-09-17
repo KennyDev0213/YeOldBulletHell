@@ -569,6 +569,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBasicMelee
       objectReference: {fileID: 0}
+    - target: {fileID: 7275051426635412331, guid: 47a743a48b5c2d14f934f00a64d116ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -630,6 +635,7 @@ GameObject:
   - component: {fileID: 1618531361}
   - component: {fileID: 1618531360}
   - component: {fileID: 1618531359}
+  - component: {fileID: 1618531363}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -725,6 +731,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618531363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618531358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf1ab9a897ffbf4e97df67fd0ad64f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1837451276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 318218342516224064, guid: 78592e649998b3443bb1fc535b4c04c1,
@@ -787,6 +805,11 @@ PrefabInstance:
     - target: {fileID: 318218342516224064, guid: 78592e649998b3443bb1fc535b4c04c1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778856045118374702, guid: 78592e649998b3443bb1fc535b4c04c1,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2374103356790017147, guid: 78592e649998b3443bb1fc535b4c04c1,

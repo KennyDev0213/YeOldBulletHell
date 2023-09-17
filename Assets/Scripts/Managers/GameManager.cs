@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
-        
+        playerItemManager = PlayerItemManager.instance;
     }
 
     void FixedUpdate()
