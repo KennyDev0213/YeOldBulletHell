@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     private int enemyNumber = 0;
     private float spawnInterval = 10, timeSinceLastSpawn = 0;
     [Header("Item spawn rate percentage")]
-    public float ItemSpawnRatePercentage = 0.2f;
+    public float ItemSpawnRatePercentage = 50f;
 
     PlayerItemManager playerItemManager;
 
@@ -74,11 +74,13 @@ public class GameManager : MonoBehaviour
             newEnemy.GetComponent<Health>().onDeath.AddListener(DecreaseEnemyCount); //decreases the enemy count so the game manager can keep an accurate tally of enemies
              
             //roll on whether the enemy will spawn an item on death or not
+            /*
             int itemSpawnRoll = Random.Range(0, 100);
             if(itemSpawnRoll <= ItemSpawnRatePercentage)
             {   
-                newEnemy.GetComponent<Health>().onDeath.AddListener(playerItemManager.SpawnItem);
+                newEnemy.GetComponent<Health>().onDeath.AddListener(playerItemManager.SpawnItems);
             }
+            */
         }
 
         //increase the enemy number

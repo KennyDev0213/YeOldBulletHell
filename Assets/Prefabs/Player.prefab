@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5637765935851095277}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,6 +58,7 @@ MonoBehaviour:
   mouseY: 0
   m1: 0
   m2: 0
+  esc: 0
 --- !u!114 &5823381262762179628
 MonoBehaviour:
   m_ObjectHideFlags: 0
