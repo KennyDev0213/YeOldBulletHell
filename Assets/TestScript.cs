@@ -13,6 +13,6 @@ public class TestScript : MonoBehaviour
 
     public void IncreaseSpeed(float value)
     {
-        attributeManager.UpdateAttribute("player_attackspeed_multiplier", value);
+        attributeManager.AddToAttribute("player_attackspeed_multiplier", value);
     }
 }
