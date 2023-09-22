@@ -73,11 +73,19 @@ public class AttributeManager : MonoBehaviour
         return attributes[attributeName];
     }
 
-    public void UpdateAttribute(string attributeName, float value)
+    public void SetAttribute(string attributeName, float value)
     {
         if (!attributes.ContainsKey(attributeName))
             Debug.LogWarning($"no attribute found as {attributeName}");
 
         attributes[attributeName] = value;
+    }
+
+    public void AddToAttribute(string attributeName, float value)
+    {
+        if (!attributes.ContainsKey(attributeName))
+            Debug.LogWarning($"no attribute found as {attributeName}");
+
+        attributes[attributeName] += value;
     }
 }
