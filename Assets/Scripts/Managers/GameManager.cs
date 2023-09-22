@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [Header("What enemies to spawn in this stage")]
     [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject[] bosses;
     [Header("where enemies can spawn (subject to change)")]
     [SerializeField] private Transform[] spawnPoints; //temporary until we figure out how to implement this
 
@@ -20,14 +21,14 @@ public class GameManager : MonoBehaviour
     [Header("Item spawn rate percentage")]
     public float ItemSpawnRatePercentage = 50f;
 
-    PlayerItemManager playerItemManager;
+    //PlayerItemManager playerItemManager;
 
     private void Awake() {
         if (instance != null && instance != this) Destroy(gameObject); else instance = this;
     }
 
     private void Start() {
-        playerItemManager = PlayerItemManager.instance;
+        //playerItemManager = PlayerItemManager.instance;
     }
 
     void FixedUpdate()
