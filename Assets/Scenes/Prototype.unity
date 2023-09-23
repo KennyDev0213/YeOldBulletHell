@@ -4119,7 +4119,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1231773864}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &905688698
+--- !u!114 &905688690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4128,14 +4128,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 905688689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a1ebd4dad8d3664fbf2782a5e652137, type: 3}
+  m_Script: {fileID: 11500000, guid: 97b9bd8e6aa425f46924bb8fb7a7c631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 905688689}
-  maxHealth: 100
+  maxHealth: 150
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  maxHealthMultiplyer: 0
 --- !u!1001 &949358701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5590,15 +5590,14 @@ PrefabInstance:
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5823381262762179628, guid: 78592e649998b3443bb1fc535b4c04c1, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2374103356790017147, guid: 78592e649998b3443bb1fc535b4c04c1,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 905688698}
+      addedObject: {fileID: 905688690}
     - targetCorrespondingSourceObject: {fileID: 1778856045118374702, guid: 78592e649998b3443bb1fc535b4c04c1,
         type: 3}
       insertIndex: -1
@@ -7592,8 +7591,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1576247459}
-  - component: {fileID: 1576247458}
   - component: {fileID: 1576247457}
+  - component: {fileID: 1576247461}
   - component: {fileID: 1576247456}
   - component: {fileID: 1576247460}
   m_Layer: 0
@@ -7654,18 +7653,6 @@ MonoBehaviour:
   - {fileID: 1800380866}
   maxEnemies: 10
   ItemSpawnRatePercentage: 50
---- !u!114 &1576247458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576247455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 673f1abf5e4a30844965863978e51922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1576247459
 Transform:
   m_ObjectHideFlags: 0
@@ -7696,6 +7683,18 @@ MonoBehaviour:
   healthText: {fileID: 1666670424}
   player: {fileID: 905688689}
   pauseMenu: {fileID: 1556127487}
+--- !u!114 &1576247461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576247455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673f1abf5e4a30844965863978e51922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1577543072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9962,6 +9961,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 95522243}
+  - {fileID: 1576247459}
   - {fileID: 1208141222}
   - {fileID: 1379877091}
   - {fileID: 1743718233}
@@ -9970,7 +9970,6 @@ SceneRoots:
   - {fileID: 1933036518}
   - {fileID: 1414100499}
   - {fileID: 258818107}
-  - {fileID: 1576247459}
   - {fileID: 1231773864}
   - {fileID: 1387731453}
   - {fileID: 1860770187}

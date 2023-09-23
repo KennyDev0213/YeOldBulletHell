@@ -11,12 +11,15 @@ public class PowerUpItem : PlayerItem
     [SerializeField] public float _movespeed;
     [SerializeField] public float _maxhealth;
     [SerializeField] public float _healthregen;
-    Health Health;
     AttributeManager attributeManager;
 
     private void Start()
     {
         attributeManager = AttributeManager.instance;
+        if (attributeManager == null)
+        {
+            Debug.LogWarning("AttributeManager.instance is not properly initialized. PowerupItems");
+        }
     }
     public override void OnPickup()
     {

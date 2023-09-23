@@ -9,12 +9,9 @@ public class Health : MonoBehaviour
     //[SerializeField] GameObject Player;
     [SerializeField] public int maxHealth = 100;
     [SerializeField] public UnityEvent onDeath;
-    AttributeManager attributeManager;
-    private float maxHealthMultiplyer = 0;
 
-    void Start()
+    protected virtual void Start()
     {
-        attributeManager = AttributeManager.instance;
         health = maxHealth;
     }
 
@@ -31,14 +28,5 @@ public class Health : MonoBehaviour
             onDeath?.Invoke();
         }
     }
-
-    public void SetMaxHealth()
-    {
-        //Player.GetComponent<Health>().health = maxHealth + (int)maxHealthMultiplyer;
-    }
-
-    public void Update()
-    {
-        maxHealthMultiplyer = attributeManager.GetAttribute("player_maxhealth_multiplier");
-    }
+    
 }
