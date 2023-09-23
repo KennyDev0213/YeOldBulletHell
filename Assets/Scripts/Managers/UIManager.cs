@@ -1,13 +1,12 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
     PlayerInput playerInput;
+    GameManager gameManager;
 
-    [SerializeField] TMP_Text healthText;
+    [SerializeField] TMP_Text healthText, scoreText;
     [SerializeField] GameObject player;
     [SerializeField] GameObject pauseMenu;
 
@@ -19,12 +18,18 @@ public class UIManager : MonoBehaviour
     {
         playerInput = PlayerInput.instance;
         playerHealth = player.GetComponent<Health>();
+
+        gameManager = GameManager.instance;
     }
 
 
     void Update()
     {
-        UpdatedHealth();
+        if(healthText != null)
+            UpdateHealth();
+        
+        if(scoreText != null)
+            UpdateScore();
 
         //if(playerInput.esc){
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)){
@@ -57,8 +62,13 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void UpdatedHealth()
+    void UpdateHealth()
     {
         healthText.text = $"Health: {playerHealth.health}";
+    }
+
+    void UpdateScore()
+    {
+        scoreText.text = $"Score: {gameManager.playerScore}";
     }
 }

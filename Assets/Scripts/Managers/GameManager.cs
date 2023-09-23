@@ -21,10 +21,14 @@ public class GameManager : MonoBehaviour
     [Header("Item spawn rate percentage")]
     public float ItemSpawnRatePercentage = 50f;
 
+
+    public int playerScore {get; private set;}
+
     //PlayerItemManager playerItemManager;
 
     private void Awake() {
         if (instance != null && instance != this) Destroy(gameObject); else instance = this;
+        playerScore = 0;
     }
 
     private void Start() {
@@ -50,6 +54,10 @@ public class GameManager : MonoBehaviour
 
     void SpawnEnemy()
     {
+        //if enemy array or spawnpoint array are empty return
+        if(enemies.Length == 0 || spawnPoints.Length == 0) return;
+
+
         //get random enemy type
         int enemyIndex = Random.Range(0, enemies.Length);
         GameObject enemy = enemies[enemyIndex];
@@ -86,5 +94,10 @@ public class GameManager : MonoBehaviour
 
         //increase the enemy number
         enemyNumber++;
+    }
+
+    public void AddScore(int amount)
+    {
+        playerScore -= amount;
     }
 }

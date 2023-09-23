@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     public Transform targetTransform;
     public float attackRange = 1f, attackRate = 1f;
 
+    public int scoreValue = 0;
+
     public Weapon weapon;
 
     [HideInInspector] public Animator enemyAnimator;

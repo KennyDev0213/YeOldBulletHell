@@ -20,11 +20,11 @@ public class PowerUpItem : PlayerItem
     }
     public override void OnPickup()
     {
-        attributeManager.UpdateAttribute("player_damage_multiplier", _damage);
-        attributeManager.UpdateAttribute("player_movespeed_multiplier", _movespeed);
-        attributeManager.UpdateAttribute("player_maxhealth_multiplier", _maxhealth);
-        attributeManager.UpdateAttribute("player_healthregen_multiplier", _healthregen);
-        attributeManager.UpdateAttribute("player_attackspeed_multiplier", _attackspeed);
+        //attributeManager.UpdateAttribute("player_damage_multiplier", _damage);
+        //attributeManager.UpdateAttribute("player_movespeed_multiplier", _movespeed);
+        //attributeManager.UpdateAttribute("player_maxhealth_multiplier", _maxhealth);
+        //attributeManager.UpdateAttribute("player_healthregen_multiplier", _healthregen);
+        //attributeManager.UpdateAttribute("player_attackspeed_multiplier", _attackspeed);
         Debug.Log("Powerup Pickedup!");
     }
 
