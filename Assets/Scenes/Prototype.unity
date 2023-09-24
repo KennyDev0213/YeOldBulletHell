@@ -4136,6 +4136,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   maxHealthMultiplyer: 0
+  Count: 0
 --- !u!1001 &949358701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7681,6 +7682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 1666670424}
+  maxhealthText: {fileID: 1979739805}
   player: {fileID: 905688689}
   pauseMenu: {fileID: 1556127487}
 --- !u!114 &1576247461
@@ -9584,6 +9586,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1972190824}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1979739805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1834152666244036414, guid: 78592e649998b3443bb1fc535b4c04c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1231773864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2005167207
 PrefabInstance:
   m_ObjectHideFlags: 0

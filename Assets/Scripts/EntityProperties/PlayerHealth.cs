@@ -31,7 +31,7 @@ public class PlayerHealth : Health
         if (attributeManager.GetAttribute("player_maxhealth_multiplier") > maxHealthMultiplyer)
         {
             maxHealthMultiplyer = attributeManager.GetAttribute("player_maxhealth_multiplier");
-            maxHealth += (int)maxHealthMultiplyer;
+            maxHealth *= (int)maxHealthMultiplyer;
         }
 
         if (health < maxHealth)

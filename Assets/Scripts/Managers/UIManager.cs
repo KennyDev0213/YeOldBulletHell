@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     PlayerInput playerInput;
 
     [SerializeField] TMP_Text healthText;
+    [SerializeField] TMP_Text maxhealthText;
     [SerializeField] GameObject player;
     [SerializeField] GameObject pauseMenu;
 
@@ -60,5 +61,6 @@ public class UIManager : MonoBehaviour
     void UpdatedHealth()
     {
         healthText.text = $"Health: {playerHealth.health}";
+        maxhealthText.text = $"/ {playerHealth.maxHealth}";
     }
 }
