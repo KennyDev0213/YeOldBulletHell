@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public int playerScore {get; private set;}
 
+    private Queue<GameObject> enemyBodies = new Queue<GameObject>();
+
     //PlayerItemManager playerItemManager;
 
     private void Awake() {
@@ -56,7 +58,6 @@ public class GameManager : MonoBehaviour
     {
         //if enemy array or spawnpoint array are empty return
         if(enemies.Length == 0 || spawnPoints.Length == 0) return;
-
 
         //get random enemy type
         int enemyIndex = Random.Range(0, enemies.Length);
@@ -92,12 +93,21 @@ public class GameManager : MonoBehaviour
             */
         }
 
+        //add game object to queue
+        enemyBodies.Enqueue(newEnemy);
+
+        if (enemyBodies.Count > enemyNumber)
+        {
+            //remove the first body added for performance
+            Destroy(enemyBodies.Dequeue());
+        }
+
         //increase the enemy number
         enemyNumber++;
     }
 
     public void AddScore(int amount)
     {
-        playerScore -= amount;
+        playerScore += amount;
     }
 }

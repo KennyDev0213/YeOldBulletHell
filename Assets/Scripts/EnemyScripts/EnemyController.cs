@@ -9,6 +9,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyController : MonoBehaviour
 {
+    GameManager gameManager;
+
     [HideInInspector] public NavMeshAgent nav;
     public EnemyState currentState;
     public Transform targetTransform;
@@ -22,6 +24,8 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameManager.instance;
+
         nav = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
 
@@ -49,6 +53,7 @@ public class EnemyController : MonoBehaviour
     public void OnDeath()
     {
         ChangeState(new EnemyDeadState(this));
+        gameManager.AddScore(scoreValue);
     }
 
     //used for animation events
