@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     GameManager gameManager;
 
     [SerializeField] TMP_Text healthText, scoreText;
+    [SerializeField] TMP_Text maxhealthText;
     [SerializeField] GameObject player;
     [SerializeField] GameObject pauseMenu;
 
@@ -65,6 +66,7 @@ public class UIManager : MonoBehaviour
     void UpdateHealth()
     {
         healthText.text = $"Health: {playerHealth.health}";
+        maxhealthText.text = $"/ {playerHealth.maxHealth}";
     }
 
     void UpdateScore()

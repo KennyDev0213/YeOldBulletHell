@@ -11,20 +11,23 @@ public class PowerUpItem : PlayerItem
     [SerializeField] public float _movespeed;
     [SerializeField] public float _maxhealth;
     [SerializeField] public float _healthregen;
-
     AttributeManager attributeManager;
 
     private void Start()
     {
         attributeManager = AttributeManager.instance;
+        if (attributeManager == null)
+        {
+            Debug.LogWarning("AttributeManager.instance is not properly initialized. PowerupItems");
+        }
     }
     public override void OnPickup()
     {
-        //attributeManager.UpdateAttribute("player_damage_multiplier", _damage);
-        //attributeManager.UpdateAttribute("player_movespeed_multiplier", _movespeed);
-        //attributeManager.UpdateAttribute("player_maxhealth_multiplier", _maxhealth);
-        //attributeManager.UpdateAttribute("player_healthregen_multiplier", _healthregen);
-        //attributeManager.UpdateAttribute("player_attackspeed_multiplier", _attackspeed);
+        attributeManager.AddToAttribute("player_damage_multiplier", _damage);
+        attributeManager.AddToAttribute("player_movespeed_multiplier", _movespeed);
+        attributeManager.AddToAttribute("player_maxhealth_multiplier", _maxhealth);
+        attributeManager.AddToAttribute("player_healthregen_multiplier", _healthregen);
+        attributeManager.AddToAttribute("player_attackspeed_multiplier", _attackspeed);
         Debug.Log("Powerup Pickedup!");
     }
 
