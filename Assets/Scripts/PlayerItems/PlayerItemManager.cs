@@ -15,7 +15,7 @@ public class PlayerItemManager : MonoBehaviour
             instance = this;
         }
     }
-
+    private int count = 0;
     private List<string> playerInventory = new List<string>();
     [SerializeField] private List<Transform> spawnPostions;
     [SerializeField] private List<GameObject> player_Items;
@@ -69,7 +69,7 @@ public class PlayerItemManager : MonoBehaviour
             Instantiate(player_Items[i], spawnPosition.position, spawnPosition.rotation);
 
             // Remove the used spawn position to prevent spawning multiple objects in the same place
-            spawnPostions.RemoveAt(randomIndex);
+            //spawnPostions.RemoveAt(randomIndex);
         }
         Debug.Log("Item has Spawned");
     }
@@ -96,6 +96,12 @@ public class PlayerItemManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        count++;
+        if(count == 3000)
+        {
+            //RemoveSpawnItems();
+            SpawnItems();
+            count = 0;
+        }
     }
 }

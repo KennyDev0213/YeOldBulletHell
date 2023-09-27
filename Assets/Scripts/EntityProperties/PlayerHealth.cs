@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerHealth : Health
 {
     AttributeManager attributeManager;
+    PauseMenu pauseMenu;
     public float maxHealthMultiplyer = 0;
     public int Count = 0;
 
@@ -34,7 +35,7 @@ public class PlayerHealth : Health
             maxHealth *= (int)maxHealthMultiplyer;
         }
 
-        if (health < maxHealth)
+        if (health < maxHealth && Time.timeScale == 1)
         {
             Count++;
             if(Count == 1000)
