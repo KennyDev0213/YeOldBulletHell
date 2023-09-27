@@ -65,8 +65,8 @@ public class UIManager : MonoBehaviour
 
     void UpdateHealth()
     {
-        healthText.text = $"Health: {playerHealth.health}";
-        maxhealthText.text = $"/ {playerHealth.maxHealth}";
+        healthText.text = $"Health:{playerHealth.health}";
+        maxhealthText.text = $"/{playerHealth.maxHealth}";
     }
 
     void UpdateScore()
