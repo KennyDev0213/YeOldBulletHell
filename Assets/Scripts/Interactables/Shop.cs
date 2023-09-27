@@ -35,6 +35,12 @@ public class Shop : MonoBehaviour, Interactable {
             gameManager.AddScore(-cost);
             --purchaseLimit;
             Debug.Log($"player just bought {good.name}");
+
+            if(purchaseLimit == 0)
+            {
+                itemDisplayPoint.gameObject.SetActive(false);
+                priceDisplay.text = "Out of Stock";
+            }
         }
     } 
 
