@@ -5582,6 +5582,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1556127490}
   m_SourcePrefab: {fileID: 100100000, guid: 78592e649998b3443bb1fc535b4c04c1, type: 3}
+--- !u!114 &1231773865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7502061296972375753, guid: 78592e649998b3443bb1fc535b4c04c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1231773864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1231978242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7622,6 +7634,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 7275051426635412331, guid: 47a743a48b5c2d14f934f00a64d116ee, type: 3}
   - {fileID: 8937813943705873064, guid: 3944459b3de9a734e8fc0f20efc6f1f2, type: 3}
+  bosses: []
   spawnPoints:
   - {fileID: 884227468}
   - {fileID: 1807480695}
@@ -7671,6 +7684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 1666670424}
+  scoreText: {fileID: 1231773865}
   player: {fileID: 905688689}
   pauseMenu: {fileID: 1556127487}
 --- !u!1001 &1577543072
