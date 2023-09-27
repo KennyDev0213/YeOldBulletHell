@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 0
-  _attackspeed: 5
+  _attackspeed: 0.5
   _movespeed: 0
   _maxhealth: 0
   _healthregen: 0
