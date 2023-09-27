@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [Header("Item spawn rate percentage")]
     public float ItemSpawnRatePercentage = 50f;
 
+    private bool isPlaying = true;
 
     public int playerScore {get; private set;}
 
@@ -35,10 +36,14 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         //playerItemManager = PlayerItemManager.instance;
+
+        player.GetComponent<Health>().onDeath.AddListener(OnPlayerDeath);
     }
 
     void FixedUpdate()
     {
+        if(!isPlaying) return;
+
         if(timeSinceLastSpawn <= 0 && enemyNumber < maxEnemies)
         {
             SpawnEnemy();
@@ -109,5 +114,10 @@ public class GameManager : MonoBehaviour
     public void AddScore(int amount)
     {
         playerScore += amount;
+    }
+
+    void OnPlayerDeath()
+    {
+        isPlaying = false;
     }
 }
