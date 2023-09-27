@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [Header("What enemies to spawn in this stage")]
     [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject[] bosses;
     [Header("where enemies can spawn (subject to change)")]
     [SerializeField] private Transform[] spawnPoints; //temporary until we figure out how to implement this
 
@@ -20,14 +21,20 @@ public class GameManager : MonoBehaviour
     [Header("Item spawn rate percentage")]
     public float ItemSpawnRatePercentage = 50f;
 
-    PlayerItemManager playerItemManager;
+
+    public int playerScore {get; private set;}
+
+    private Queue<GameObject> enemyBodies = new Queue<GameObject>();
+
+    //PlayerItemManager playerItemManager;
 
     private void Awake() {
         if (instance != null && instance != this) Destroy(gameObject); else instance = this;
+        playerScore = 0;
     }
 
     private void Start() {
-        playerItemManager = PlayerItemManager.instance;
+        //playerItemManager = PlayerItemManager.instance;
     }
 
     void FixedUpdate()
@@ -49,6 +56,9 @@ public class GameManager : MonoBehaviour
 
     void SpawnEnemy()
     {
+        //if enemy array or spawnpoint array are empty return
+        if(enemies.Length == 0 || spawnPoints.Length == 0) return;
+
         //get random enemy type
         int enemyIndex = Random.Range(0, enemies.Length);
         GameObject enemy = enemies[enemyIndex];
@@ -83,7 +93,21 @@ public class GameManager : MonoBehaviour
             */
         }
 
+        //add game object to queue
+        enemyBodies.Enqueue(newEnemy);
+
+        if (enemyBodies.Count > enemyNumber)
+        {
+            //remove the first body added for performance
+            Destroy(enemyBodies.Dequeue());
+        }
+
         //increase the enemy number
         enemyNumber++;
+    }
+
+    public void AddScore(int amount)
+    {
+        playerScore += amount;
     }
 }

@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
 
     [HideInInspector] public float vertical = 0, horizontal = 0, mouseX = 0, mouseY = 0;
 
-    [HideInInspector] public bool m1 = false, m2 = false, esc = false;
+    [HideInInspector] public bool m1 = false, m2 = false, esc = false, interact = false;
 
     private void Awake() {
         if(instance != null && instance != this)
@@ -21,7 +21,7 @@ public class PlayerInput : MonoBehaviour
         return instance;
     }
 
-    private void FixedUpdate() {
+    private void Update() {
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
 
@@ -32,5 +32,7 @@ public class PlayerInput : MonoBehaviour
         m2 = Input.GetButton("Fire2");
 
         esc = Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.P);
+
+        interact = Input.GetButtonDown("Interact") || Input.GetKeyDown(KeyCode.E);
     }
 }
