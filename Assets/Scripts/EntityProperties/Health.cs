@@ -6,10 +6,11 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     public int health { get; private set; }
-    [SerializeField] int maxHealth = 100;
+    //[SerializeField] GameObject Player;
+    [SerializeField] public int maxHealth = 100;
     [SerializeField] public UnityEvent onDeath;
-    
-    void Start()
+
+    protected virtual void Start()
     {
         health = maxHealth;
     }
@@ -27,4 +28,5 @@ public class Health : MonoBehaviour
             onDeath?.Invoke();
         }
     }
+    
 }

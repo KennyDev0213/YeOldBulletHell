@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 32d9fa95549fb9a45a3353048d759bb6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,18 +122,6 @@ MonoBehaviour:
   onItemPickup:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerItemManager, Assembly-CSharp
-        m_MethodName: AddItem
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Ball
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 5017787586352623719}
         m_TargetAssemblyTypeName: PowerUpItem, Assembly-CSharp
         m_MethodName: OnPickup
@@ -158,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25793fbd786f6d44841af1a9c7b1c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
-  _attackspeed: 1
-  _movespeed: 1
-  _maxhealth: 2
-  _healthregen: 1
+  _damage: 0
+  _attackspeed: 0
+  _movespeed: 0
+  _maxhealth: 0.5
+  _healthregen: 0
