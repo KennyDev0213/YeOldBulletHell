@@ -6,6 +6,5 @@ public class KillBox : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
         Destroy(other.gameObject);
-        Debug.Log("hello");
     }
 }
