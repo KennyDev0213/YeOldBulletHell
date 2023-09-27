@@ -97,6 +97,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   attackRange: 1
   attackRate: 1
+  scoreValue: 1
   weapon: {fileID: 7477426058579319274}
   enemyAnimator: {fileID: 0}
 --- !u!114 &241016453058514722
