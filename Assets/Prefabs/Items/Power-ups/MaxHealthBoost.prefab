@@ -149,5 +149,5 @@ MonoBehaviour:
   _damage: 0
   _attackspeed: 0
   _movespeed: 0
-  _maxhealth: 0.5
+  _maxhealth: 0.05
   _healthregen: 0
