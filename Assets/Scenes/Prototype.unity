@@ -9709,6 +9709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3ce0f7d78f9cf44b08db86cae1961d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  count: 0
   spawnPostions:
   - {fileID: 1421542223}
   - {fileID: 292519329}
@@ -9725,10 +9727,15 @@ MonoBehaviour:
   - {fileID: 1199437720}
   player_Items:
   - {fileID: 7528155960829289181, guid: 485d58bc1f9d01d479c1dff86dc8e96b, type: 3}
-  - {fileID: 8687956641283830527, guid: 6a2c91d224e02c345b19c5237bfe5054, type: 3}
+  - {fileID: 8687956641283830527, guid: 8e4b85e0d14bdca42b7ec7274425e9fe, type: 3}
   - {fileID: 2340098518846946753, guid: ce373f93e0ea2ee4e923f9461a35fa8c, type: 3}
   - {fileID: 483194995895453096, guid: ed38927f5dad7a941b4439ad36cf1f28, type: 3}
   - {fileID: 2702203267806615392, guid: a97b5d0be3d4d424292464b7883e2007, type: 3}
+  spawnAble_Items:
+  - {fileID: 483194995895453096, guid: ed38927f5dad7a941b4439ad36cf1f28, type: 3}
+  - {fileID: 8687956641283830527, guid: 8e4b85e0d14bdca42b7ec7274425e9fe, type: 3}
+  - {fileID: 2702203267806615392, guid: a97b5d0be3d4d424292464b7883e2007, type: 3}
+  - {fileID: 2340098518846946753, guid: ce373f93e0ea2ee4e923f9461a35fa8c, type: 3}
 --- !u!114 &1576247457
 MonoBehaviour:
   m_ObjectHideFlags: 0
