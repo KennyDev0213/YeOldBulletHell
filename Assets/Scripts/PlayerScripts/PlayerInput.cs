@@ -6,6 +6,8 @@ public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput instance;
 
+    public bool fixPlayerInput = false;
+
     [HideInInspector] public float vertical = 0, horizontal = 0, mouseX = 0, mouseY = 0;
 
     [HideInInspector] public bool m1 = false, m2 = false, esc = false, interact = false;
@@ -22,6 +24,8 @@ public class PlayerInput : MonoBehaviour
     }
 
     private void Update() {
+        if (fixPlayerInput) return;
+
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
 

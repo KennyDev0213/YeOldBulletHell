@@ -23,7 +23,6 @@ public class GunWeapon : Weapon {
             if (targetHealth != null)
             {
                 targetHealth.AddHealth(-damage);
-                //Debug.Log($"delt {damage} to {hit.transform.name}, it's current health is {targetHealth.health}");
             }
         }
     }

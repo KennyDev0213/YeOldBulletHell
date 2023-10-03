@@ -7,7 +7,6 @@ public class UIManager : MonoBehaviour
     GameManager gameManager;
 
     [SerializeField] TMP_Text healthText, scoreText;
-    [SerializeField] TMP_Text maxhealthText;
     [SerializeField] GameObject player;
     [SerializeField] GameObject pauseMenu;
 
@@ -47,6 +46,7 @@ public class UIManager : MonoBehaviour
 
     public void Pause()
     {
+        playerInput.fixPlayerInput = true;
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
         isPaused = true;
@@ -56,6 +56,7 @@ public class UIManager : MonoBehaviour
 
     public void Unpause()
     {
+        playerInput.fixPlayerInput = false;
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
         isPaused = false;
@@ -65,8 +66,7 @@ public class UIManager : MonoBehaviour
 
     void UpdateHealth()
     {
-        healthText.text = $"Health:{playerHealth.health}";
-        maxhealthText.text = $"/{playerHealth.maxHealth}";
+        healthText.text = $"Health:{playerHealth.health} / {playerHealth.maxHealth}";
     }
 
     void UpdateScore()
