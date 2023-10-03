@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -116,9 +114,15 @@ public class GameManager : MonoBehaviour
         playerScore += amount;
     }
 
+    [SerializeField] GameObject endGamePanel;
+
     void OnPlayerDeath()
     {
         isPlaying = false;
-        SceneManager.LoadScene(0);
+        PlayerInput.instance.fixPlayerInput = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        endGamePanel.SetActive(true);
+        endGamePanel.GetComponent<GameOverUI>().UpdateScore(playerScore.ToString());
     }
 }

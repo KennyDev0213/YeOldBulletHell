@@ -24,7 +24,6 @@ public class MeleeWeapon : Weapon {
             if(targetHealth != null) 
             {
                 targetHealth.AddHealth(-damage);
-                Debug.Log($"{name} hit {hit.transform.name} with melee for {damage} damage");
             }
         }
     }
