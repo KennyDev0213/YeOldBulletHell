@@ -5,7 +5,9 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     [SerializeField] Animator _door;
+    [SerializeField] private int Doorlimit = 50;
     public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.playerScore > 50)
+        if (gameManager.playerScore > Doorlimit)
         {
             _door.SetBool("Dooropen", true);
         }
