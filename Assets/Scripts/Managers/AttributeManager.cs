@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AttributeManager : MonoBehaviour
 {
-    public string filePath = Application.dataPath + "/StreamingAssets/Attributes.csv";
+    private string fileName = "attributes.csv";
     private Dictionary<string, float> attributes = new Dictionary<string, float>();
     public static AttributeManager instance {private set; get;}
 
@@ -22,8 +22,14 @@ public class AttributeManager : MonoBehaviour
         InitializeAttributes();
     }
 
+    private void Start() {
+        
+    }
+
     private void InitializeAttributes()
     {
+        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+
         StreamReader data = File.OpenText(filePath);
 
         bool clearedHeader = false;
