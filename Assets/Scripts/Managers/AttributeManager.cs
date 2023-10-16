@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AttributeManager : MonoBehaviour
 {
-
+    public string filePath = Application.dataPath + "/StreamingAssets/Attributes.csv";
     private Dictionary<string, float> attributes = new Dictionary<string, float>();
     public static AttributeManager instance {private set; get;}
 
@@ -24,7 +24,8 @@ public class AttributeManager : MonoBehaviour
 
     private void InitializeAttributes()
     {
-        StreamReader data = File.OpenText(".\\Assets\\Scripts\\Managers\\attributes.csv");
+        StreamReader data = File.OpenText(filePath);
+
         bool clearedHeader = false;
         while(true)
         {
@@ -50,18 +51,9 @@ public class AttributeManager : MonoBehaviour
                 Debug.LogError($"failure parsing attribute {values[0]} {e}");
                 continue;
             }
-            
 
             attributes.Add(values[0], fvalue);
         }
-
-        /*
-        Debug.Log("Initialized attributes as:");
-        foreach(KeyValuePair<string, float> pair in attributes)
-        {
-            Debug.Log($"{pair.Key} : {pair.Value}");
-        }
-        */
     }
 
     public float GetAttribute(string attributeName){

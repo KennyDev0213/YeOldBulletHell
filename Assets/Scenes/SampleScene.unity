@@ -690,6 +690,7 @@ MonoBehaviour:
   spawnPoints: []
   maxEnemies: 10
   ItemSpawnRatePercentage: 50
+  endGamePanel: {fileID: 0}
 --- !u!114 &1611329169 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7502061296972375753, guid: 78592e649998b3443bb1fc535b4c04c1,
@@ -708,6 +709,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1131634342233752716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1897298093
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5051615734412840978, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_Name
+      value: KnightBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.525939
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.607227
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571270577202907816, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051442231043508040, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: targetTransform
+      value: 
+      objectReference: {fileID: 1837451276}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4faf32f771ba9944c88bb052af9e9e2d, type: 3}
 --- !u!1001 &1131634342233752716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1005,3 +1079,4 @@ SceneRoots:
   - {fileID: 1230673150}
   - {fileID: 6108838140385785750}
   - {fileID: 758785700}
+  - {fileID: 1897298093}
