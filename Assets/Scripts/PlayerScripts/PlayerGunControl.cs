@@ -32,6 +32,8 @@ public class PlayerGunControl : MonoBehaviour
 
             currentWeapon.Use();
 
+            UpdateStatistic();
+
             attackCooldown = 1 / (attackRate * attackRateMultiplier);
         }
     }
@@ -43,5 +45,10 @@ public class PlayerGunControl : MonoBehaviour
     void UpdateAttributes()
     {
         attackRateMultiplier = attributeManager.GetAttribute("player_attackspeed_multiplier");
+    }
+
+    void UpdateStatistic()
+    {
+        PlayerStatistics.instance.UpdateStat("Shots Fired", 1);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerItemManager : MonoBehaviour
 {
     public static PlayerItemManager instance;
-    public GameManager gameManager;
+    [HideInInspector] public GameManager gameManager;
 
     private void Awake() {
         if (instance != null && instance != this)

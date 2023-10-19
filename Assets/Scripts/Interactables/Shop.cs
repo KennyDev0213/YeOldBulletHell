@@ -34,7 +34,8 @@ public class Shop : MonoBehaviour, Interactable {
             interactEvent.Invoke();
             gameManager.AddScore(-cost);
             --purchaseLimit;
-            Debug.Log($"player just bought {good.name}");
+
+            PlayerStatistics.instance.UpdateStat("Shops Used", 1);
 
             if(purchaseLimit == 0)
             {

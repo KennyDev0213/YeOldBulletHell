@@ -29403,6 +29403,7 @@ GameObject:
   - component: {fileID: 1576247461}
   - component: {fileID: 1576247456}
   - component: {fileID: 1576247460}
+  - component: {fileID: 1576247462}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -29475,6 +29476,7 @@ MonoBehaviour:
   - {fileID: 1800380866}
   maxEnemies: 10
   ItemSpawnRatePercentage: 50
+  endGamePanel: {fileID: 0}
 --- !u!4 &1576247459
 Transform:
   m_ObjectHideFlags: 0
@@ -29504,7 +29506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1666670424}
   scoreText: {fileID: 273042741}
-  maxhealthText: {fileID: 1979739805}
   player: {fileID: 905688689}
   pauseMenu: {fileID: 1556127487}
 --- !u!114 &1576247461
@@ -29517,6 +29518,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 673f1abf5e4a30844965863978e51922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1576247462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576247455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b001eef664f0a41bf2b9081ee9189b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1577543072
@@ -35747,18 +35760,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1979641960}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1979739805 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1834152666244036414, guid: 78592e649998b3443bb1fc535b4c04c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1231773864}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1981271219
 GameObject:
   m_ObjectHideFlags: 0
