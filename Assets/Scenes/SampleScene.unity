@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 1367856505}
   - component: {fileID: 1367856507}
   - component: {fileID: 1367856508}
+  - component: {fileID: 1367856509}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -691,6 +692,18 @@ MonoBehaviour:
   maxEnemies: 10
   ItemSpawnRatePercentage: 50
   endGamePanel: {fileID: 0}
+--- !u!114 &1367856509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367856504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b001eef664f0a41bf2b9081ee9189b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1611329169 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7502061296972375753, guid: 78592e649998b3443bb1fc535b4c04c1,
@@ -717,6 +730,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2528599336807322449, guid: 4faf32f771ba9944c88bb052af9e9e2d,
+        type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 5051615734412840978, guid: 4faf32f771ba9944c88bb052af9e9e2d,
         type: 3}
       propertyPath: m_Name

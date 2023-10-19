@@ -16,26 +16,29 @@ public class GameManager : MonoBehaviour
     public int maxEnemies = 10;
     private int enemyNumber = 0;
     private float spawnInterval = 10, timeSinceLastSpawn = 0;
-    [Header("Item spawn rate percentage")]
-    public float ItemSpawnRatePercentage = 50f;
-
     private bool isPlaying = true;
-
     public int playerScore {get; private set;}
 
     private Queue<GameObject> enemyBodies = new Queue<GameObject>();
+
+    PlayerStatistics playerStatistics;
 
     //PlayerItemManager playerItemManager;
 
     private void Awake() {
         if (instance != null && instance != this) Destroy(gameObject); else instance = this;
         playerScore = 0;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start() {
         //playerItemManager = PlayerItemManager.instance;
+        playerStatistics = PlayerStatistics.instance;
 
         player.GetComponent<Health>().onDeath.AddListener(OnPlayerDeath);
+
+        player.GetComponent<Health>().SetStatisticEvent("Damage Taken");
     }
 
     void FixedUpdate()
@@ -51,9 +54,12 @@ public class GameManager : MonoBehaviour
         if(timeSinceLastSpawn > 0){
             timeSinceLastSpawn -= Time.deltaTime;
         }
+
+        playerStatistics.UpdateStat("Time Alive", Time.deltaTime);
     }
 
     void DecreaseEnemyCount(){
+        playerStatistics.UpdateStat("Enemies Neutralized", 1);
         enemyNumber--;
     }
 
@@ -84,8 +90,11 @@ public class GameManager : MonoBehaviour
         
         if(newEnemy.GetComponent<Health>() != null)
         {
-            newEnemy.GetComponent<Health>().onDeath.AddListener(DecreaseEnemyCount); //decreases the enemy count so the game manager can keep an accurate tally of enemies
+            Health newEnemyHealth = newEnemy.GetComponent<Health>();
+            newEnemyHealth.onDeath.AddListener(DecreaseEnemyCount); //decreases the enemy count so the game manager can keep an accurate tally of enemies
              
+            newEnemyHealth.SetStatisticEvent("Damage Dealt");
+
             //roll on whether the enemy will spawn an item on death or not
             /*
             int itemSpawnRoll = Random.Range(0, 100);
@@ -118,11 +127,19 @@ public class GameManager : MonoBehaviour
 
     void OnPlayerDeath()
     {
+        if(!isPlaying) return;
+
+        foreach(GameObject enemy in enemyBodies)
+        {
+            Destroy(enemy);
+        }
+
         isPlaying = false;
         PlayerInput.instance.fixPlayerInput = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         endGamePanel.SetActive(true);
         endGamePanel.GetComponent<GameOverUI>().UpdateScore(playerScore.ToString());
+        endGamePanel.GetComponent<GameOverUI>().UpdateStatistics();
     }
 }

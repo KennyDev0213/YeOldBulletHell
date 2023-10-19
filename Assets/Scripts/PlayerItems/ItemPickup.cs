@@ -23,7 +23,8 @@ public class ItemPickup : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log($"Collided with {other.transform.name} using Trigger");
+        PlayerStatistics.instance.UpdateStat("Items Picked up", 1);
+
         if (other.CompareTag("Player"))
         {
             onItemPickup?.Invoke();
