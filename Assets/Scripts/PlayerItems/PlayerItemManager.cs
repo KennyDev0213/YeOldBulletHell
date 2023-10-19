@@ -18,7 +18,7 @@ public class PlayerItemManager : MonoBehaviour
         }
     }
     [SerializeField] private int count = 0;
-    private int SpawnBuffer = 5;
+    private int SpawnBuffer = 25;
     private List<string> playerInventory = new List<string>();
     [SerializeField] private List<Transform> spawnPostions;
     [SerializeField] private List<GameObject> player_Items;
@@ -118,7 +118,7 @@ public class PlayerItemManager : MonoBehaviour
         {
             //RemoveSpawnItems();
             InASpawnItem();
-            if(count < 20)
+            if(count < 35)
             {
               SpawnBuffer += 5;
             }
