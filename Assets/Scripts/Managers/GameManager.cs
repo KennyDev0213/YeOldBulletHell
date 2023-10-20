@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private GameObject[] bosses;
     [Header("where enemies can spawn (subject to change)")]
-    [SerializeField] private Transform[] spawnPoints; //temporary until we figure out how to implement this
+    private Transform[] spawnPoints; //temporary until we figure out how to implement this
 
     public static GameManager instance {private set; get;}
     [Header("how many enemies will be allowed on the level at once")]
@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Health>().onDeath.AddListener(OnPlayerDeath);
 
         player.GetComponent<Health>().SetStatisticEvent("Damage Taken");
+
+        ResetSpawnPoints();
     }
 
     void FixedUpdate()
@@ -61,6 +63,26 @@ public class GameManager : MonoBehaviour
     void DecreaseEnemyCount(){
         playerStatistics.UpdateStat("Enemies Neutralized", 1);
         enemyNumber--;
+    }
+
+    public void ResetSpawnPoints()
+    {
+        GameObject spawnPointHolder = GameObject.Find("EnemySpawnPoints");
+
+        if (spawnPointHolder == null)
+        {
+            Debug.LogWarning("Could not find 'EnemySpawnPoints' gameobject in scene");
+            return;
+        }
+
+        List<Transform> sp = new List<Transform>();
+
+        foreach(Transform spawnPoint in spawnPointHolder.transform)
+        {
+            sp.Add(spawnPoint);
+        }
+
+        spawnPoints = sp.ToArray();
     }
 
     void SpawnEnemy()

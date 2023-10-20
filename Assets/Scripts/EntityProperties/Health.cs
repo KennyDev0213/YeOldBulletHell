@@ -22,8 +22,7 @@ public class Health : MonoBehaviour
         health += amount;
 
         if(amount < 0 && assignedStat != null){
-            float currentValue = PlayerStatistics.instance.GetStat(assignedStat);
-            PlayerStatistics.instance.UpdateStat(assignedStat, currentValue += -amount);
+            PlayerStatistics.instance.UpdateStat(assignedStat, -amount);
         }
 
         if (health > maxHealth)
