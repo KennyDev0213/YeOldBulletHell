@@ -22,17 +22,15 @@ public class GameOverUI : MonoBehaviour
 
         //BEGIN TIME CONVERSION
 
-        float secs = stats["Time Alive"];
+        float secs = stats["Time Alive"];;
 
-        Debug.Log(secs);
-
-        int mins = (int) secs * (1/60);
-        int hours = mins * (1/60);
+        float mins = ((int) secs) *  1 / 60;
+        float hours = ((int)mins) * 1 / 60;
 
         secs -= mins * 60;
         mins -= hours * 60;
 
-        statString += $"Time Alive: {hours}:{mins}:{(int) secs} \n";
+        statString += $"Time Alive: {(int) hours}:{(int) mins}:{secs} \n";
 
         //END TIME CONVERSION
 
@@ -48,6 +46,7 @@ public class GameOverUI : MonoBehaviour
 
     public void ToMain()
     {
+        Destroy(GameManager.instance.gameObject);
         SceneManager.LoadScene(0);
     }
 }

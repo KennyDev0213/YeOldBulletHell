@@ -19819,6 +19819,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4987560600175824319, guid: 53f3b6cd8563750459d899470e4d3d19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987560600175824319, guid: 53f3b6cd8563750459d899470e4d3d19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.448
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22365,6 +22375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 189.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220992400219895568, guid: 78592e649998b3443bb1fc535b4c04c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29466,17 +29481,10 @@ MonoBehaviour:
   enemies:
   - {fileID: 7275051426635412331, guid: 47a743a48b5c2d14f934f00a64d116ee, type: 3}
   - {fileID: 8937813943705873064, guid: 3944459b3de9a734e8fc0f20efc6f1f2, type: 3}
-  bosses: []
-  spawnPoints:
-  - {fileID: 884227468}
-  - {fileID: 1807480695}
-  - {fileID: 2112618660}
-  - {fileID: 1029421264}
-  - {fileID: 405335822}
-  - {fileID: 1800380866}
+  bosses:
+  - {fileID: 5051615734412840978, guid: 4faf32f771ba9944c88bb052af9e9e2d, type: 3}
   maxEnemies: 10
-  ItemSpawnRatePercentage: 50
-  endGamePanel: {fileID: 0}
+  endGamePanel: {fileID: 1859916046}
 --- !u!4 &1576247459
 Transform:
   m_ObjectHideFlags: 0
@@ -31373,6 +31381,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987560600175824319, guid: 53f3b6cd8563750459d899470e4d3d19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987560600175824319, guid: 53f3b6cd8563750459d899470e4d3d19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.351
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34123,6 +34141,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a75b7be928618ca4fb3b42915c54e228,
     type: 3}
   m_PrefabInstance: {fileID: 1850532937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1859916046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9220992400219895568, guid: 78592e649998b3443bb1fc535b4c04c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1231773864}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1860770184
 GameObject:

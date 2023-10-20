@@ -27,6 +27,8 @@ public class PlayerStatistics : MonoBehaviour
 
     private void Start() {
         ResetStatsDictionary();
+
+        UpdateStat("Time Alive", 10000);
     }
 
     void ResetStatsDictionary()
