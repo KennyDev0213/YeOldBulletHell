@@ -39,4 +39,20 @@ public class PlayerInput : MonoBehaviour
 
         interact = Input.GetButtonDown("Interact") || Input.GetKeyDown(KeyCode.E);
     }
+
+    public void ClearInputs()
+    {
+        vertical = 0;
+        horizontal = 0;
+
+        mouseX = 0;
+        mouseY = 0;
+
+        m1 = false;
+        m2 = false;
+
+        esc = false;
+
+        interact = false;
+    }
 }

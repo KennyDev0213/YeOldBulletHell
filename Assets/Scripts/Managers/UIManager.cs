@@ -52,6 +52,7 @@ public class UIManager : MonoBehaviour
         isPaused = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        playerInput.ClearInputs();
     }
 
     public void Unpause()

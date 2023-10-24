@@ -6,9 +6,8 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     public int health { get; private set; }
-    //[SerializeField] GameObject Player;
-    [SerializeField] public int maxHealth = 100;
-    [SerializeField] public UnityEvent onDeath;
+    public int maxHealth = 100;
+    [SerializeField] public UnityEvent onDeath, onHealthChange;
 
     string assignedStat;
 
@@ -32,7 +31,10 @@ public class Health : MonoBehaviour
         else if (health <= 0)
         {
             onDeath?.Invoke();
+            return;
         }
+
+        onHealthChange?.Invoke();
     }
 
     public void SetStatisticEvent(string statistic)
